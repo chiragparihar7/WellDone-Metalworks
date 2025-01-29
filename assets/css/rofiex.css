@@ -344,7 +344,7 @@
 # Common
 --------------------------------------------------------------*/
 body {
-  font-family: var(--rofiex-font, "Mulish", sans-serif);
+  font-family: "Raleway", serif;
   color: var(--rofiex-text, #636363);
   font-size: 16px;
   line-height: 1.625;
@@ -2476,7 +2476,6 @@ h6 {
   position: relative;
   counter-reset: count;
   background-color: var(--rofiex-black2, #222222);
-  margin-top: 76px;
   padding: 74px 0 0;
 }
 .main-footer--two {
@@ -2755,6 +2754,7 @@ h6 {
   align-items: center;
   gap: 19px;
 }
+
 
 .footer-widget--post__img {
   position: relative;
@@ -3647,7 +3647,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--rofiex-base, #FE574F);
+
   clip-path: polygon(0 0, 100% 0, 84% 100%, 16% 100%);
 }
 @media (max-width: 1800px) {
