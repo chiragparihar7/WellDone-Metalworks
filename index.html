@@ -41,7 +41,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <style>
-     .custom-header .container {
+     .main-header .container {
         max-width: 1240px;
         margin: 0 auto;
         display: flex;
@@ -51,6 +51,7 @@
         font-size: 20px;
         font-weight: 600;
     }
+   
 
     /* Header Top */
     .top-bar {
@@ -187,60 +188,64 @@
     <!-- /.preloader -->
     <div class="page-wrapper">
         <!-- Header Top -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-left">
-                    <span class="top-phone">📞 +123 456 7890</span>
-                    <span class="top-email">✉ support@example.com</span>
-                </div>
-                <div class="top-right">
-                    <a href="#">
-                        <img src="facebook-icon.png" alt="Facebook">
-                    </a>
-                    <a href="#">
-                        <img src="twitter-icon.png" alt="Twitter">
-                    </a>
-                    <a href="#">
-                        <img src="linkedin-icon.png" alt="LinkedIn">
-                    </a>
+        <div class="main-header">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="top-left">
+                        <span class="top-phone">📞 +123 456 7890</span>
+                        <span class="top-email">✉ support@example.com</span>
+                    </div>
+                    <div class="top-right">
+                        <a href="#">
+                            <img src="facebook-icon.png" alt="Facebook">
+                        </a>
+                        <a href="#">
+                            <img src="twitter-icon.png" alt="Twitter">
+                        </a>
+                        <a href="#">
+                            <img src="linkedin-icon.png" alt="LinkedIn">
+                        </a>
+                    </div>
                 </div>
             </div>
+            <!-- Main Header -->
+            <header class="custom-header">
+                <div class="container">
+                    <!-- Logo -->
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="assets/images/Metalworks-logo4.png" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- Navigation Menu -->
+                    <nav class="header-nav">
+                        <ul class="nav-links">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <a href="#">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Get In Touch Button -->
+                    <a href="#" class="cta-button">Get In Touch</a>
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()">☰</button>
+                </div>
+            </header>
         </div>
-        <!-- Main Header -->
-        <header class="custom-header">
-            <div class="container">
-                <!-- Logo -->
-                <div class="header-logo">
-                    <a href="#">
-                        <img src="assets/images/Metalworks-logo4.png" alt="Logo">
-                    </a>
-                </div>
-                <!-- Navigation Menu -->
-                <nav class="header-nav">
-                    <ul class="nav-links">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Gallery</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- Get In Touch Button -->
-                <a href="#" class="cta-button">Get In Touch</a>
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" onclick="toggleMobileMenu()">☰</button>
-            </div>
-        </header>
+
+        
         <!-- main-slider-start -->
         <section class="main-slider-one">
             <div class="main-slider-one__carousel rofiex-slick__carousel" data-slick-options='{
