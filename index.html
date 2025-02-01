@@ -39,144 +39,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome LInk  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />     
+
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <style>
-     .main-header1 .container {
-        max-width: 1240px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 0px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-   
-
-    /* Header Top */
-    .top-bar {
-        background: #e52e18;
-        color: white;
-        font-size: 14px;
-        padding: 8px 0;
-    }
-
-    .top-left,
-    .top-right {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 15px;
-    }
-
-    .top-right a img {
-        width: 20px;
-        height: 20px;
-    }
-
-    /* Main Header */
-    .custom-header {
-        background: #fff;
-    }
-
-    .header-logo img {
-        width: 150px;
-    }
-
-    /* Navigation */
-    .header-nav .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-    }
-
-    .header-nav .nav-links li {
-        display: inline;
-    }
-
-    .header-nav .nav-links a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        padding: 10px 15px;
-        transition: 0.3s;
-    }
-
-    .header-nav .nav-links a:hover {
-        color: #ff6600;
-    }
-
-    /* Get In Touch Button */
-    .cta-button {
-        background: #d72e22;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .cta-button:hover {
-        background: #fff;
-        border: 1px solid #000;
-        color: #000
-    }
-
-    /* Mobile Menu Button */
-    .mobile-menu-button {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 40px;
-        cursor: pointer;
-        margin-right: 20px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-        .header-nav {
-            display: none;
-        }
-
-        .mobile-menu-button {
-            display: block;
-        }
-
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background: #fff;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-        }
-
-        .nav-active {
-            display: flex;
-        }
-
-        .cta-button {
-            display: none;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .top-bar {
-            flex-direction: column;
-            text-align: center;
-            display: none;
-        }
-
-        .header-logo img {
-            width: 150px;
-            height: 80px;
-            object-fit: contain;
-        }
-    }
+  
 </style>
 
 <body class="custom-cursor boxed-wrapper">
@@ -192,18 +65,20 @@
             <div class="top-bar">
                 <div class="container">
                     <div class="top-left">
-                        <span class="top-phone">📞 +123 456 7890</span>
-                        <span class="top-email">✉ support@example.com</span>
+                        <span class="top-phone"><i class="fa-solid fa-phone ml-2 "></i> <a
+                                href="tel:+919649957698">9649957698</a></span>
+                        <span class="top-email"><i class="fa-solid fa-envelope"></i> <a
+                                href="mailto:rofiex@envato.com">panchalsourav32@gmail.com</a></span>
                     </div>
                     <div class="top-right">
                         <a href="#">
-                            <img src="facebook-icon.png" alt="Facebook">
+                            <i class="fa-brands fa-square-facebook"></i>
                         </a>
                         <a href="#">
-                            <img src="twitter-icon.png" alt="Twitter">
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
                         <a href="#">
-                            <img src="linkedin-icon.png" alt="LinkedIn">
+                            <i class="fa-brands fa-square-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -221,10 +96,10 @@
                     <nav class="header-nav">
                         <ul class="nav-links">
                             <li>
-                                <a href="#">Home</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li>
-                                <a href="#">About</a>
+                                <a href="about.html">About</a>
                             </li>
                             <li>
                                 <a href="#">Services</a>
@@ -245,7 +120,7 @@
             </header>
         </div>
 
-        
+
         <!-- main-slider-start -->
         <section class="main-slider-one">
             <div class="main-slider-one__carousel rofiex-slick__carousel" data-slick-options='{
@@ -1115,11 +990,7 @@
             <div class="main-footer__bg" style="background-image: url(assets/images/backgrounds/footer-bg-1-1.jpg);">
             </div>
             <!-- /.main-footer__bg -->
-            <div class="main-footer__logo">
-                <a href="index.html">
-                    <img src="assets/images/footer-logo.png" width="245" alt="rofiex HTML Template">
-                </a>
-            </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-xl-4">
