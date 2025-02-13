@@ -152,3 +152,29 @@
   font-size: 20px;
   color: #e32c16;
 }
+
+.tab-section{
+  padding: 50px 0;
+}
+.tab-section .nav-link:hover {
+  background-color: #d72e22;
+  color: #fff;
+}
+
+.tab-section .nav-link.active {
+  background-color: #d72e22;
+  color: #fff;
+}
+
+.tab-section .nav-link {
+  background-color: transparent;
+  padding: 4px 20px;
+  border-radius: 0;
+  border: 1px solid #d72e22;
+  color: #001e4c;
+}
+
+.tabs-img img {
+  height: 300px;
+  object-fit: cover;
+}
