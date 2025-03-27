@@ -813,43 +813,42 @@
                         </div>
                     </div>
                     <div class="col-xl-6">
-                        <form class="contact-one__form contact-form-validated form-one wow fadeInUp"
-                            data-wow-delay="300ms" action="https://bracketweb.com/rofiex-html/inc/sendemail.php">
+                        <form class="contact-one__form contact-form-validated form-one wow fadeInUp" data-wow-delay="300ms"
+                            action="sendemail.php" method="POST">
+                        
                             <h5 class="contact-one__form__title">REQUEST A QUOTE</h5>
                             <p class="contact-one__form__text">24/7 support</p>
+                        
                             <div class="form-one__group">
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="text" name="name" placeholder="Your Name *">
+                                    <input type="text" name="name" placeholder="Your Name *" required>
                                 </div>
-                                <!-- /.form-one__control -->
+                        
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="email" name="email" placeholder="Email Address *">
+                                    <input type="email" name="email" placeholder="Email Address *" required>
                                 </div>
-                                <!-- /.form-one__control -->
+                        
                                 <div class="form-one__control form-one__control--full">
-                                    <input class="rofiex-datepicker" type="text" name="date"
-                                        placeholder="Bulding Date *">
+                                    <input class="rofiex-datepicker" type="text" name="date" placeholder="Building Date *" required>
                                     <span class="form-one__control__icon">
                                         <i class="icon-calendar11"></i>
                                     </span>
                                 </div>
-                                <!-- /.form-one__control -->
+                        
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="tel" name="phone" placeholder="Phone Number *">
+                                    <input type="tel" name="phone" placeholder="Phone Number *" required>
                                 </div>
-                                <!-- /.form-one__control -->
+                        
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="text" name="location" placeholder="Your Location *">
+                                    <input type="text" name="location" placeholder="Your Location *" required>
                                 </div>
-                                <!-- /.form-one__control -->
+                        
                                 <div class="form-one__control form-one__control--full">
                                     <button type="submit" class="rofiex-btn">
                                         <span>Send Message</span>
                                     </button>
                                 </div>
-                                <!-- /.form-one__control -->
                             </div>
-                            <!-- /.form-one__group -->
                         </form>
                     </div>
                     <!-- /.col-lg-8 -->
