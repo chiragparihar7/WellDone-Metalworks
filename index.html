@@ -813,42 +813,45 @@
                         </div>
                     </div>
                     <div class="col-xl-6">
-                        <form class="contact-one__form contact-form-validated form-one wow fadeInUp" data-wow-delay="300ms"
-                            action="sendemail.php" method="POST">
-                        
+                        <form class="contact-one__form contact-form-validated form-one wow fadeInUp" data-wow-delay="300ms" id="contactForm">
                             <h5 class="contact-one__form__title">REQUEST A QUOTE</h5>
                             <p class="contact-one__form__text">24/7 support</p>
-                        
                             <div class="form-one__group">
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="text" name="name" placeholder="Your Name *" required>
+                                    <input type="text" name="name" placeholder="Your Name *">
                                 </div>
-                        
+                                <!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="email" name="email" placeholder="Email Address *" required>
+                                    <input type="email" name="email" placeholder="Email Address *">
                                 </div>
-                        
+                                <!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
-                                    <input class="rofiex-datepicker" type="text" name="date" placeholder="Building Date *" required>
+                                    <input class="rofiex-datepicker" type="text" name="date"
+                                        placeholder="Bulding Date *">
                                     <span class="form-one__control__icon">
                                         <i class="icon-calendar11"></i>
                                     </span>
                                 </div>
-                        
+                                <!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="tel" name="phone" placeholder="Phone Number *" required>
+                                    <input type="tel" name="phone" placeholder="Phone Number *">
                                 </div>
-                        
+                                <!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
-                                    <input type="text" name="location" placeholder="Your Location *" required>
+                                    <input type="text" name="location" placeholder="Your Location *">
                                 </div>
-                        
+                                <!-- /.form-one__control -->
+                                <div id="successMessage" class="form-one__control form-one__control--full" style="display: none; color: green; font-weight: bold; margin-bottom: 10px;width:100%">
+                                    Your message has been sent successfully!
+                                </div>
                                 <div class="form-one__control form-one__control--full">
                                     <button type="submit" class="rofiex-btn">
                                         <span>Send Message</span>
                                     </button>
                                 </div>
+                                <!-- /.form-one__control -->
                             </div>
+                            <!-- /.form-one__group -->
                         </form>
                     </div>
                     <!-- /.col-lg-8 -->
@@ -1213,6 +1216,80 @@
                 mobileWrapper.classList.toggle('expanded');
             });
         });
+
+       document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+            const successMessage = document.getElementById("successMessage");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                let isValid = true;
+                const inputs = form.querySelectorAll("input");
+
+                // Remove previous error messages
+                form.querySelectorAll(".error-message").forEach(error => error.remove());
+
+                // Validate inputs
+                inputs.forEach(input => {
+                    if (input.value.trim() === "") {
+                        isValid = false;
+                        showError(input, "This field is required");
+                    } else if (input.name === "email" && !isValidEmail(input.value)) {
+                        isValid = false;
+                        showError(input, "Enter a valid email address");
+                    } else if (input.name === "phone" && !isValidPhone(input.value)) {
+                        isValid = false;
+                        showError(input, "Enter a valid phone number");
+                    }
+                });
+
+                if (isValid) {
+                    submitForm();
+                }
+            });
+
+            function showError(input, message) {
+                const errorSpan = document.createElement("span");
+                errorSpan.className = "error-message";
+                errorSpan.style.color = "red";
+                errorSpan.style.fontSize = "12px";
+                errorSpan.textContent = message;
+                input.parentNode.appendChild(errorSpan);
+            }
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function isValidPhone(phone) {
+                return /^\+?[0-9]{7,15}$/.test(phone);
+            }
+
+            function submitForm() {
+                const formData = new FormData(form);
+
+                fetch("sendmail.php", { // Ensure the correct PHP file
+                    method: "POST",
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        // if (data.trim() === "success") {
+                            successMessage.style.display = "block";
+                            form.reset();
+                            setTimeout(() => successMessage.style.display = "none", 3000);
+                        //  else {
+                        //     alert("Error sending message. Please try again.");
+                        // }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        alert("There was an error sending your message. Please try again.");
+                    });
+            }
+        });
+
     </script>
 </body>
 
